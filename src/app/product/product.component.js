@@ -12,6 +12,9 @@ var ProductComponent = (function () {
     function ProductComponent() {
         this.model = new repository_model_1.ModelRepository();
     }
+    ProductComponent.prototype.getClasses = function () {
+        return this.model.getProducts().length == 5 ? "bg-success" : "bg-warning";
+    };
     return ProductComponent;
 }());
 ProductComponent = __decorate([
