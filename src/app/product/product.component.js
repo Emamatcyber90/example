@@ -17,6 +17,8 @@ var ProductComponent = (function () {
         this.model = new repository_model_1.ModelRepository();
         this.fontSizeWithUnits = "30px";
         this.fontSizeWithoutUnits = "30";
+        window.appRef = ref;
+        window.model = this.model;
     }
     ProductComponent.prototype.getClasses = function (key) {
         // return this.model.getProducts().length == 5 ? "bg-success" : "bg-warning";
@@ -37,6 +39,13 @@ var ProductComponent = (function () {
             "margin.px": 100,
             color: product.price > 50 ? "red" : "green"
         };
+    };
+    ProductComponent.prototype.getProductByPosition = function (position) {
+        return this.model.getProducts()[position];
+    };
+    ProductComponent.prototype.getClassesByPosition = function (position) {
+        var product = this.getProductByPosition(position);
+        return "p-a-1 " + (product.price < 50 ? "bg-info" : "bg-warning");
     };
     return ProductComponent;
 }());

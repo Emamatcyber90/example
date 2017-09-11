@@ -1,10 +1,8 @@
-<div class="p-a-1 bg-warning">
-    The <span [ngStyle]="getStyles(1)">first</span>
-    product is {{ model.getProduct(1)?.name || 'None' }}
+<div [ngClass]="getClassesByPosition(0)">
+    The first product is {{ getProductByPosition(0).name }}
 </div>
-<div class="p-a-1 bg-info">
-        The <span [ngStyle]="getStyles(2)">second</span>
-        product is {{ model.getProduct(2)?.name || 'None' }}
+<div [ngClass]="getClassesByPosition(1)">
+    The second product is {{ getProductByPosition(1).name }}
 </div>
 <div class="p-a-1" [ngClass]="{'bg-success': model.getProduct(3).price < 50, 
                                'bg-info': model.getProduct(3).price >= 50 }">
