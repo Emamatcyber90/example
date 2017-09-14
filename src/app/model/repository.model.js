@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var product_model_1 = require("./product.model");
 var datasource_model_1 = require("./datasource.model");
 var ModelRepository = (function () {
     function ModelRepository() {
@@ -40,6 +41,10 @@ var ModelRepository = (function () {
             candidate++;
         }
         return candidate;
+    };
+    ModelRepository.prototype.swapProduct = function () {
+        var p = this.products.shift();
+        this.products.push(new product_model_1.Product(p.id, p.name, p.category, p.price));
     };
     return ModelRepository;
 }());

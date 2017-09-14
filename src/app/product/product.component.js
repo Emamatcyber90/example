@@ -57,6 +57,9 @@ var ProductComponent = (function () {
     ProductComponent.prototype.getProductCount = function () {
         return this.getProducts().length;
     };
+    ProductComponent.prototype.getKey = function (index, product) {
+        return product.id;
+    };
     return ProductComponent;
 }());
 ProductComponent = __decorate([
