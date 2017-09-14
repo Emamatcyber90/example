@@ -1,6 +1,15 @@
+<template #titleTpl let-title="title">
+    <h4 class="p-a-1 m-t-1 m-b-1 bg-success">{{ title }}</h4>
+</template>
+
+<template [ngTemplateOutlet]="titleTpl" [ngOutletContext]="{title: 'Header'}"></template>
+
 <div class="bg-info p-a-1">
     There are {{ getProductCount() }} products.
 </div>
+
+<!-- template [ngTemplateOutlet]="titleTpl" [ngOutletContext]="{title: 'Footer'}"></template -->
+<duv *ngTemplateOutlet="titleTpl" [ngOutletContext]="{title: 'Footer'}"></div>
 
 <table class="table table-sm table-bordered table-striped m-t-1">
     <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
