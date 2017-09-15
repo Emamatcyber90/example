@@ -38,6 +38,7 @@ var ProductComponent = (function () {
     function ProductComponent(ref) {
         this.model = new repository_model_1.ModelRepository();
         this.targetName = "Kayak";
+        this.counter = 1;
         window.appRef = ref;
         window.model = this.model;
     }
@@ -59,6 +60,9 @@ var ProductComponent = (function () {
     };
     ProductComponent.prototype.getKey = function (index, product) {
         return product.id;
+    };
+    ProductComponent.prototype.getProductPrice = function (index) {
+        return Math.floor(this.getProduct(index).price);
     };
     return ProductComponent;
 }());

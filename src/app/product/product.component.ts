@@ -67,4 +67,10 @@ export class ProductComponent {
     }
 
     targetName: string = "Kayak";
+
+    counter: number = 1;
+
+    getProductPrice(index: number): number {
+        return Math.floor(this.getProduct(index).price);
+    }
 }
