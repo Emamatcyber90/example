@@ -53,6 +53,15 @@ var ProductComponent = (function () {
         }
         return messages;
     };
+    ProductComponent.prototype.getFormValidationMessages = function (form) {
+        var _this = this;
+        var messages = [];
+        Object.keys(form.controls).forEach(function (k) {
+            _this.getValidationMessages(form.controls[k], k)
+                .forEach(function (m) { return messages.push(m); });
+        });
+        return messages;
+    };
     ProductComponent.prototype.submitForm = function (form) {
         this.isSubmitted = true;
         if (form.valid) {
