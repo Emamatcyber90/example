@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ModelRepository } from "../model/repository.model";
 import { ApplicationRef }   from "@angular/core";
 import { Product }  from "../model/product.model";
+import { NgForm }   from "@angular/forms";
 
 @Component({
     selector: "app",
@@ -18,4 +19,49 @@ export class ProductComponent {
         return this.model.getProducts();
     }
 
+    newProduct: Product = new Product();
+
+    get jsonProduct() {
+        return JSON.stringify(this.newProduct);
+    }
+
+    addProduct(p: Product) {
+        console.log("New Product: " + this.jsonProduct);
+    }
+
+    getValidationMessages(state: any, fieldName?: string) {
+        let field: string = state.path || fieldName;
+        let messages: string[] = [];
+        // console.log(JSON.stringify(state.errors));
+        if (state.errors) {
+            for (let errorName in state.errors) {
+                // console.log(JSON.stringify(state.errors[errorName]));
+                switch (errorName) {
+                    case "required":
+                        messages.push(`You must enter a ${ fieldName}`);
+                        break;
+                    case "minlength":
+                        messages.push(`A ${ fieldName} must be at least 
+                            ${ state.errors['minlength'].requiredLength } characters`);
+                        break;
+                    case "pattern":
+                        messages.push(`The ${ fieldName } contains illegal characters`);
+                        break;
+                }
+            }
+        }
+        return messages;
+    }
+
+    isSubmitted: boolean = false;
+
+    submitForm(form: NgForm) {
+        this.isSubmitted = true;
+        if (form.valid) {
+            this.addProduct(this.newProduct);
+            this.newProduct = new Product();
+            form.reset();
+            this.isSubmitted = false;
+        }
+    }
 }
