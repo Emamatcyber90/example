@@ -7,7 +7,7 @@ import { ProductFormGroup }     from "./model/form.group";
 
 @NgModule({
     imports:    [ BrowserModule, FormsModule, ReactiveFormsModule ], 
-    declarations:   [ ProductComponent, ProductFormControl, ProductFormGroup ], 
+    declarations:   [ ProductComponent ], 
     bootstrap:  [ ProductComponent ]
 })
 export class AppModule { }

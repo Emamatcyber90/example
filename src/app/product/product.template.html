@@ -4,37 +4,26 @@
 </style>
 
 <div class="bg-info p-a-1 m-b-1">Model Data: {{ jsonProduct }}</div>
-<form novalidate #form="ngForm" (ngSubmit)="submitForm(form)">
+<form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
     <div class="p-a-1 m-a-1" 
         [class.bg-danger]="isSubmitted && form.invalid" 
         *ngIf="isSubmitted && form.invalid">
         There are problems with the form
         <ul>
-            <li *ngFor="let error of getFormValidationMessages(form)">
+            <li *ngFor="let error of form.getFormValidationMessages()">
                 {{ error }}
             </li>
         </ul>
     </div>
 
-    <div class="form-group">
-        <label>Name</label>
-        <input class="form-control" name="name" [(ngModel)]="newProduct.name" 
-            required minlength="5" pattern="^[A-Za-z ]+$" #name="ngModel" />
+    <div class="form-group" *ngFor="let control of form.productControls">
+        <label>{{ control.label }}</label>
+        <input class="form-control" name="{{ control.modelProperty }}" 
+                [(ngModel)]="newProduct[control.modelProperty]" 
+                formControlName="{{ control.modelProperty }}" />
         <ul class="text-danger list-unstyled" 
-            *ngIf="(isSubmitted || name.dirty) && name.invalid">
-            <li *ngFor="let error of getValidationMessages(name)">
-                {{ error }}
-            </li>
-        </ul>
-    </div>
-
-    <div class="form-group">
-        <label>Price</label>
-        <input class="form-control" name="price" [(ngModel)]="newProduct.price"
-            #price="ngModel" required pattern="^[0-9\.]+$" />
-        <ul class="text-danger list-unstyled" 
-            *ngIf="(isSubmitted || price.dirty) && price.invalid">
-            <li *ngFor="let error of getValidationMessages(price)">
+            *ngIf="(isSubmitted || control.dirty) && control.invalid">
+            <li *ngFor="let error of control.getValidationMessages()">
                 {{ error }}
             </li>
         </ul>
