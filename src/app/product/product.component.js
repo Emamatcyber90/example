@@ -54,15 +54,12 @@ var ProductComponent = (function () {
     ProductComponent.prototype.getProducts = function () {
         return this.model.getProducts();
     };
-    Object.defineProperty(ProductComponent.prototype, "jsonProduct", {
-        get: function () {
-            return JSON.stringify(this.newProduct);
-        },
-        enumerable: true,
-        configurable: true
-    });
+    // get jsonProduct() {
+    //     return JSON.stringify(this.newProduct);
+    // }
     ProductComponent.prototype.addProduct = function (p) {
-        console.log("New Product: " + this.jsonProduct);
+        // console.log("New Product: " + this.jsonProduct);
+        this.model.saveProduct(p);
     };
     ProductComponent.prototype.submitForm = function (form) {
         this.isSubmitted = true;

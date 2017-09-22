@@ -23,12 +23,13 @@ export class ProductComponent {
 
     newProduct: Product = new Product();
 
-    get jsonProduct() {
-        return JSON.stringify(this.newProduct);
-    }
+    // get jsonProduct() {
+    //     return JSON.stringify(this.newProduct);
+    // }
 
     addProduct(p: Product) {
-        console.log("New Product: " + this.jsonProduct);
+        // console.log("New Product: " + this.jsonProduct);
+        this.model.saveProduct(p);
     }
 
     // getValidationMessages(state: any, fieldName?: string) {
