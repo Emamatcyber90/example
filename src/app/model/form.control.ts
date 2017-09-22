@@ -27,6 +27,9 @@ export class ProductFormControl extends FormControl {
                     case "pattern":
                         messages.push(`The ${this.label} contains illegal characters`);
                         break;
+                    case "limit":
+                        messages.push(`The ${this.label} cannot exceed ${this.errors['limit'].limit}`);
+                        break;
                 }
             }
         }

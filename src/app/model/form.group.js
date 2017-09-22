@@ -12,6 +12,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var forms_1 = require("@angular/forms");
 var form_control_1 = require("./form.control");
+var limit_validator_1 = require("../validator/limit.validator");
 var ProductFormGroup = (function (_super) {
     __extends(ProductFormGroup, _super);
     function ProductFormGroup() {
@@ -25,6 +26,7 @@ var ProductFormGroup = (function (_super) {
             ])),
             price: new form_control_1.ProductFormControl("Price", "price", "", forms_1.Validators.compose([
                 forms_1.Validators.required,
+                limit_validator_1.LimitValidator.Limit(100),
                 forms_1.Validators.pattern("^[0-9\.]+$")
             ]))
         }) || this;

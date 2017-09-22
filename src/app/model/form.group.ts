@@ -1,5 +1,6 @@
 import { FormGroup, Validators }    from "@angular/forms";
 import { ProductFormControl }   from "./form.control";
+import { LimitValidator }       from "../validator/limit.validator";
 
 export class ProductFormGroup extends FormGroup {
     constructor() {
@@ -13,6 +14,7 @@ export class ProductFormGroup extends FormGroup {
             ])),
             price: new ProductFormControl("Price", "price", "", Validators.compose([
                 Validators.required, 
+                LimitValidator.Limit(100), 
                 Validators.pattern("^[0-9\.]+$")
             ]))
         });
