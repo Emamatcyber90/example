@@ -10,15 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var product_model_1 = require("../model/product.model");
 var PaAttrDirective = (function () {
     // constructor(element: ElementRef, @Attribute("pa-attr")bgClass: string) {
     //     element.nativeElement.classList.add(bgClass || "bg-success");
     // }
     function PaAttrDirective(element) {
+        var _this = this;
         this.element = element;
+        this.click = new core_1.EventEmitter();
+        this.element.nativeElement.addEventListener("click", function (e) {
+            if (null != _this.product) {
+                _this.click.emit(_this.product.category);
+            }
+        });
     }
     PaAttrDirective.prototype.ngOnInit = function () {
         this.element.nativeElement.classList.add(this.bgClass || "bg-success");
+    };
+    PaAttrDirective.prototype.ngOnChanges = function (changes) {
+        var change = changes["bgClass"];
+        var classList = this.element.nativeElement.classList;
+        if (!change.isFirstChange() && classList.contains(change.previousValue)) {
+            classList.remove(change.previousValue);
+        }
+        if (!classList.contains(change.currentValue)) {
+            classList.add(change.currentValue);
+        }
     };
     return PaAttrDirective;
 }());
@@ -26,6 +44,14 @@ __decorate([
     core_1.Input("pa-attr"),
     __metadata("design:type", String)
 ], PaAttrDirective.prototype, "bgClass", void 0);
+__decorate([
+    core_1.Input("pa-product"),
+    __metadata("design:type", product_model_1.Product)
+], PaAttrDirective.prototype, "product", void 0);
+__decorate([
+    core_1.Output("pa-category"),
+    __metadata("design:type", Object)
+], PaAttrDirective.prototype, "click", void 0);
 PaAttrDirective = __decorate([
     core_1.Directive({
         selector: "[pa-attr]"
