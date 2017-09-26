@@ -4,3 +4,5 @@ node_modules/**
 typings/**
 src/aot/**/*
 **/*.log
+**/*.map
+**/app/**/*.js
