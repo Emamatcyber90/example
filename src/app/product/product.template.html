@@ -40,7 +40,8 @@
 <div class="col-xs-6">
     <div class="form-group bg-info p-a-1">
         <label>Name: </label>
-        <input class="bg-primary" [(paModel)]="newProduct.name" />
+        <input class="bg-primary" [(paModel)]="newProduct.name" #paModel="paModel" />
+        <div class="bg-primary">Data flow from: {{ paModel.direction }}</div>
     </div>
 
     <table class="table table-sm table-bordered table-striped">

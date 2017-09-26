@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var PaModel = (function () {
     function PaModel() {
+        this.direction = "None";
         this.fieldValue = "";
         this.update = new core_1.EventEmitter();
     }
@@ -20,12 +21,14 @@ var PaModel = (function () {
         console.log("ngOnChanges(), fieldValue=" + this.fieldValue + ", currentValue=" + change.currentValue);
         if (change.currentValue != this.fieldValue) {
             this.fieldValue = changes['modelProperty'].currentValue || "";
+            this.direction = "Model";
         }
     };
     PaModel.prototype.updateValue = function (newValue) {
         console.log("updateValue(), newValue=" + newValue);
         this.fieldValue = newValue;
         this.update.emit(newValue);
+        this.direction = "Element";
     };
     return PaModel;
 }());
@@ -49,7 +52,8 @@ __decorate([
 ], PaModel.prototype, "updateValue", null);
 PaModel = __decorate([
     core_1.Directive({
-        selector: "input[paModel]"
+        selector: "input[paModel]",
+        exportAs: "paModel"
     })
 ], PaModel);
 exports.PaModel = PaModel;

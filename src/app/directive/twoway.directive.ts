@@ -2,9 +2,13 @@ import { Input, Output, EventEmitter, Directive,
          HostBinding, HostListener, SimpleChange }  from "@angular/core";
 
 @Directive({
-    selector:   "input[paModel]"
+    selector:   "input[paModel]", 
+    exportAs:   "paModel"
 })
 export class PaModel {
+
+    direction: string = "None";
+
     @Input("paModel")
     modelProperty: string;
 
@@ -16,6 +20,7 @@ export class PaModel {
         console.log("ngOnChanges(), fieldValue=" + this.fieldValue + ", currentValue="+change.currentValue);
         if (change.currentValue != this.fieldValue) {
             this.fieldValue = changes['modelProperty'].currentValue || "";
+            this.direction = "Model";
         }
     }
 
@@ -27,5 +32,6 @@ export class PaModel {
         console.log("updateValue(), newValue=" + newValue);
         this.fieldValue = newValue;
         this.update.emit(newValue);
+        this.direction = "Element";
     }
 }
