@@ -12,6 +12,7 @@ var product_component_1 = require("./product/product.component");
 var forms_1 = require("@angular/forms");
 var attr_directive_1 = require("./directive/attr.directive");
 var twoway_directive_1 = require("./directive/twoway.directive");
+var structure_directive_1 = require("./directive/structure.directive");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +21,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_1.ReactiveFormsModule],
-        declarations: [product_component_1.ProductComponent, attr_directive_1.PaAttrDirective, twoway_directive_1.PaModel],
+        declarations: [product_component_1.ProductComponent, attr_directive_1.PaAttrDirective, twoway_directive_1.PaModel, structure_directive_1.PaStructureDirective],
         bootstrap: [product_component_1.ProductComponent]
     })
 ], AppModule);

@@ -6,10 +6,11 @@ import { ProductFormControl }   from "./model/form.control";
 import { ProductFormGroup }     from "./model/form.group";
 import { PaAttrDirective }      from "./directive/attr.directive";
 import { PaModel }              from "./directive/twoway.directive";
+import { PaStructureDirective } from "./directive/structure.directive";
 
 @NgModule({
     imports:    [ BrowserModule, FormsModule, ReactiveFormsModule ], 
-    declarations:   [ ProductComponent, PaAttrDirective, PaModel ], 
+    declarations:   [ ProductComponent, PaAttrDirective, PaModel, PaStructureDirective ], 
     bootstrap:  [ ProductComponent ]
 })
 export class AppModule { }

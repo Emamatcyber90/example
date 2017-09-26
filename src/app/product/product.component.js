@@ -47,6 +47,7 @@ var ProductComponent = (function () {
         //     return messages;
         // }
         this.isSubmitted = false;
+        this.showTable = true;
     }
     ProductComponent.prototype.getProduct = function (key) {
         return this.model.getProduct(key);

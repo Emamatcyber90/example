@@ -67,6 +67,8 @@ export class ProductComponent {
 
     isSubmitted: boolean = false;
 
+    showTable: boolean = true;
+
     submitForm(form: NgForm) {
         this.isSubmitted = true;
         if (form.valid) {
