@@ -15,37 +15,6 @@ var ProductComponent = (function () {
         this.model = new repository_model_1.ModelRepository();
         this.form = new form_group_1.ProductFormGroup();
         this.newProduct = new product_model_1.Product();
-        // getValidationMessages(state: any, fieldName?: string) {
-        //     let field: string = state.path || fieldName;
-        //     let messages: string[] = [];
-        //     // console.log(JSON.stringify(state.errors));
-        //     if (state.errors) {
-        //         for (let errorName in state.errors) {
-        //             // console.log(JSON.stringify(state.errors[errorName]));
-        //             switch (errorName) {
-        //                 case "required":
-        //                     messages.push(`You must enter a ${ fieldName}`);
-        //                     break;
-        //                 case "minlength":
-        //                     messages.push(`A ${ fieldName} must be at least 
-        //                         ${ state.errors['minlength'].requiredLength } characters`);
-        //                     break;
-        //                 case "pattern":
-        //                     messages.push(`The ${ fieldName } contains illegal characters`);
-        //                     break;
-        //             }
-        //         }
-        //     }
-        //     return messages;
-        // }
-        // getFormValidationMessages(form: NgForm): string[] {
-        //     let messages: string[] = [];
-        //     Object.keys(form.controls).forEach(k => {
-        //         this.getValidationMessages(form.controls[k], k)
-        //             .forEach(m => messages.push(m));
-        //     });
-        //     return messages;
-        // }
         this.isSubmitted = false;
         this.showTable = true;
     }
@@ -61,6 +30,40 @@ var ProductComponent = (function () {
     ProductComponent.prototype.addProduct = function (p) {
         // console.log("New Product: " + this.jsonProduct);
         this.model.saveProduct(p);
+    };
+    // getValidationMessages(state: any, fieldName?: string) {
+    //     let field: string = state.path || fieldName;
+    //     let messages: string[] = [];
+    //     // console.log(JSON.stringify(state.errors));
+    //     if (state.errors) {
+    //         for (let errorName in state.errors) {
+    //             // console.log(JSON.stringify(state.errors[errorName]));
+    //             switch (errorName) {
+    //                 case "required":
+    //                     messages.push(`You must enter a ${ fieldName}`);
+    //                     break;
+    //                 case "minlength":
+    //                     messages.push(`A ${ fieldName} must be at least 
+    //                         ${ state.errors['minlength'].requiredLength } characters`);
+    //                     break;
+    //                 case "pattern":
+    //                     messages.push(`The ${ fieldName } contains illegal characters`);
+    //                     break;
+    //             }
+    //         }
+    //     }
+    //     return messages;
+    // }
+    // getFormValidationMessages(form: NgForm): string[] {
+    //     let messages: string[] = [];
+    //     Object.keys(form.controls).forEach(k => {
+    //         this.getValidationMessages(form.controls[k], k)
+    //             .forEach(m => messages.push(m));
+    //     });
+    //     return messages;
+    // }
+    ProductComponent.prototype.deleteProduct = function (key) {
+        this.model.deleteProduct(key);
     };
     ProductComponent.prototype.submitForm = function (form) {
         this.isSubmitted = true;

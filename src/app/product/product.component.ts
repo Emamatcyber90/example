@@ -65,9 +65,13 @@ export class ProductComponent {
     //     return messages;
     // }
 
+    deleteProduct(key: number) {
+        this.model.deleteProduct(key);
+    }
+
     isSubmitted: boolean = false;
 
-    showTable: boolean = true;
+    showTable: boolean = true; 
 
     submitForm(form: NgForm) {
         this.isSubmitted = true;
