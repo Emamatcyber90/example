@@ -1,6 +1,6 @@
 import { NgModule }     from "@angular/core";
 import { BrowserModule }    from "@angular/platform-browser";
-import { ProductComponent } from "./product/product.component";
+import { ProductComponent } from "./component";
 import { FormsModule, ReactiveFormsModule }     from "@angular/forms";
 import { ProductFormControl }   from "./model/form.control";
 import { ProductFormGroup }     from "./model/form.group";

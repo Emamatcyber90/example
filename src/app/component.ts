@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
-import { ModelRepository } from "../model/repository.model";
+import { ModelRepository } from "./model/repository.model";
 import { ApplicationRef }   from "@angular/core";
-import { Product }  from "../model/product.model";
+import { Product }  from "./model/product.model";
 import { NgForm }   from "@angular/forms";
-import { ProductFormGroup } from "../model/form.group";
+import { ProductFormGroup } from "./model/form.group";
 
 @Component({
     selector: "app",
-    templateUrl: "./product.template.html"
+    templateUrl: "./template.html"
 })
 export class ProductComponent {
     model: ModelRepository = new ModelRepository();
