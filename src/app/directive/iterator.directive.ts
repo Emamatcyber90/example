@@ -80,7 +80,7 @@ class PaIteratorContext {
     index: number;
     view: ViewRef;
 
-    constructor(public $implicit: any, public index:number, length: number) {
+    constructor(public $implicit: any, index:number, length: number) {
         this.setData(index, length);
         // setInterval(() => {
         //     this.odd = !this.odd;
