@@ -11,17 +11,17 @@ import { ProductFormGroup } from "../model/form.group";
 })
 export class ProductComponent {
     model: ModelRepository = new ModelRepository();
-    form: ProductFormGroup = new ProductFormGroup();
+    // form: ProductFormGroup = new ProductFormGroup();
 
-    getProduct(key: number): Product {
-        return this.model.getProduct(key);
-    }
+    // getProduct(key: number): Product {
+    //     return this.model.getProduct(key);
+    // }
 
-    getProducts(): Product[] {
-        return this.model.getProducts();
-    }
+    // getProducts(): Product[] {
+    //     return this.model.getProducts();
+    // }
 
-    newProduct: Product = new Product();
+    // newProduct: Product = new Product();
 
     // get jsonProduct() {
     //     return JSON.stringify(this.newProduct);
@@ -65,21 +65,21 @@ export class ProductComponent {
     //     return messages;
     // }
 
-    deleteProduct(key: number) {
-        this.model.deleteProduct(key);
-    }
+    // deleteProduct(key: number) {
+    //     this.model.deleteProduct(key);
+    // }
 
-    isSubmitted: boolean = false;
+    // isSubmitted: boolean = false;
 
-    showTable: boolean = true; 
+    // showTable: boolean = true; 
 
-    submitForm(form: NgForm) {
-        this.isSubmitted = true;
-        if (form.valid) {
-            this.addProduct(this.newProduct);
-            this.newProduct = new Product();
-            form.reset();
-            this.isSubmitted = false;
-        }
-    }
+    // submitForm(form: NgForm) {
+    //     this.isSubmitted = true;
+    //     if (form.valid) {
+    //         this.addProduct(this.newProduct);
+    //         this.newProduct = new Product();
+    //         form.reset();
+    //         this.isSubmitted = false;
+    //     }
+    // }
 }
