@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ModelRepository } from "./model/repository.model";
+import { ModelService } from "./service/model.service";
 import { ApplicationRef }   from "@angular/core";
 import { Product }  from "./model/product.model";
 import { NgForm }   from "@angular/forms";
@@ -10,7 +10,7 @@ import { ProductFormGroup } from "./model/form.group";
     templateUrl: "./template.html"
 })
 export class ProductComponent {
-    model: ModelRepository = new ModelRepository();
+    // model: ModelService = new ModelService();
     // form: ProductFormGroup = new ProductFormGroup();
 
     // getProduct(key: number): Product {
@@ -26,6 +26,8 @@ export class ProductComponent {
     // get jsonProduct() {
     //     return JSON.stringify(this.newProduct);
     // }
+
+    constructor(private model: ModelService) { }
 
     addProduct(p: Product) {
         // console.log("New Product: " + this.jsonProduct);

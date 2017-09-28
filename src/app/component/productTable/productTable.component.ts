@@ -1,5 +1,5 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { ModelRepository }  from "../../model/repository.model";
+import { ModelService }     from "../../service/model.service";
 import { Product }  from "../../model/product.model";
 import { PaCellColor }  from "../../directive/cellColor.directive";
 import { DiscountService }  from "../../service/discount.service";
@@ -12,7 +12,7 @@ export class ProductTableComponent {
 
     // discounter: DiscountService = new DiscountService();
 
-    @Input("model") dataModel: ModelRepository;
+    @Input("model") dataModel: ModelService;
 
     getProduct(key: number): Product {
         return this.dataModel.getProduct(key);

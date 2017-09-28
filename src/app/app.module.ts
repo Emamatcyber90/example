@@ -20,6 +20,8 @@ import { PaDiscountPipe }       from "./pipe/discount.pipe";
 import { PaDiscountDisplayComponent }   from "./component/discount/discountDisplay.component";
 import { PaDiscountEditorComponent }    from "./component/discount/discountEditor.component";
 import { DiscountService }              from "./service/discount.service";
+import { ModelService }                 from "./service/model.service";
+import { SimpleDataSourceService }      from "./service/datasource.service";
 
 @NgModule({
     imports:    [ BrowserModule, FormsModule, ReactiveFormsModule ], 
@@ -30,7 +32,7 @@ import { DiscountService }              from "./service/discount.service";
                       PaToggleView,
                       PaAddTaxPipe, PaCategoryFilterPipe, PaDiscountPipe, 
                       PaDiscountDisplayComponent, PaDiscountEditorComponent ], 
-    providers:  [ DiscountService ],
+    providers:  [ DiscountService, ModelService, SimpleDataSourceService ],
     bootstrap:  [ ProductComponent ]
 })
 export class AppModule { }

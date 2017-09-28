@@ -1,6 +1,8 @@
-import { Product }             from "./product.model";
+import { Injectable }   from "@angular/core";
+import { Product }      from "../model/product.model";
 
-export class SimpleDataSource {
+@Injectable()
+export class SimpleDataSourceService {
     private data:Product[];
 
     constructor() {
