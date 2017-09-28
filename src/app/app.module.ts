@@ -9,21 +9,28 @@ import { PaModel }              from "./directive/twoway.directive";
 import { PaStructureDirective } from "./directive/structure.directive";
 import { PaIteratorDirective }  from "./directive/iterator.directive";
 import { PaCellColor }          from "./directive/cellColor.directive";
+import { PaDiscountAmountDirective }    from "./directive/discountAmount.directive";
 import { PaCellColorSwitcher }  from "./directive/cellColorSwitcher.directive";
 import { ProductTableComponent }    from "./component/productTable/productTable.component";
 import { ProductFormComponent }     from "./component/productForm/productForm.component";
 import { PaToggleView }         from "./component/toggleView/toggleView.component";
 import { PaAddTaxPipe }         from "./pipe/addTax.pipe";
 import { PaCategoryFilterPipe } from "./pipe/categoryFilter.pipe";
+import { PaDiscountPipe }       from "./pipe/discount.pipe";
+import { PaDiscountDisplayComponent }   from "./component/discount/discountDisplay.component";
+import { PaDiscountEditorComponent }    from "./component/discount/discountEditor.component";
+import { DiscountService }              from "./service/discount.service";
 
 @NgModule({
     imports:    [ BrowserModule, FormsModule, ReactiveFormsModule ], 
     declarations:   [ ProductComponent, PaAttrDirective, PaModel, 
-                      PaStructureDirective, PaIteratorDirective, 
+                      PaStructureDirective, PaIteratorDirective, PaDiscountAmountDirective, 
                       PaCellColor, PaCellColorSwitcher, 
                       ProductTableComponent, ProductFormComponent, 
                       PaToggleView,
-                      PaAddTaxPipe, PaCategoryFilterPipe ], 
+                      PaAddTaxPipe, PaCategoryFilterPipe, PaDiscountPipe, 
+                      PaDiscountDisplayComponent, PaDiscountEditorComponent ], 
+    providers:  [ DiscountService ],
     bootstrap:  [ ProductComponent ]
 })
 export class AppModule { }

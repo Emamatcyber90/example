@@ -2,12 +2,16 @@ import { Component, Input, ViewChildren, QueryList } from "@angular/core";
 import { ModelRepository }  from "../../model/repository.model";
 import { Product }  from "../../model/product.model";
 import { PaCellColor }  from "../../directive/cellColor.directive";
+import { DiscountService }  from "../../service/discount.service";
 
 @Component({
     selector:   "paProductTable", 
     templateUrl:    "./productTable.template.html"
 })
 export class ProductTableComponent {
+
+    // discounter: DiscountService = new DiscountService();
+
     @Input("model") dataModel: ModelRepository;
 
     getProduct(key: number): Product {
