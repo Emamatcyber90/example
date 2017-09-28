@@ -38,6 +38,7 @@ export class ProductTableComponent {
         setTimeout(() => {
             this.viewChildren.forEach((child, index) => {
                 child.setColor(index % 2 ? true : false);
+                child.changeCase();
             });
         }, 0);
     }
