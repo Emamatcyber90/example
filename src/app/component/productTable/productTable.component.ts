@@ -22,6 +22,8 @@ export class ProductTableComponent {
         this.dataModel.deleteProduct(key);
     }
 
-    // isShowTable: boolean = true;
+    dateObject: Date = new Date(2020, 1, 20);
+    dateString: String = "2020-02-20T00:00:00.000";
+    dateNumber: number = 1582156800000;
 
 }
