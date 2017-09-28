@@ -22,24 +22,6 @@ export class ProductTableComponent {
         this.dataModel.deleteProduct(key);
     }
 
-    isShowTable: boolean = true;
+    // isShowTable: boolean = true;
 
-    @ViewChildren(PaCellColor)
-    viewChildren: QueryList<PaCellColor>;
-
-    ngAfterViewInit() {
-        this.viewChildren.changes.subscribe(() => {
-            this.updateViewChildren();
-        });
-        this.updateViewChildren();
-    }
-
-    private updateViewChildren() {
-        setTimeout(() => {
-            this.viewChildren.forEach((child, index) => {
-                child.setColor(index % 2 ? true : false);
-                child.changeCase();
-            });
-        }, 0);
-    }
 }
