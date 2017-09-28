@@ -12,7 +12,9 @@ export class ProductTableComponent {
 
     // discounter: DiscountService = new DiscountService();
 
-    @Input("model") dataModel: ModelService;
+    // @Input("model") dataModel: ModelService;
+
+    constructor(private dataModel: ModelService) { }
 
     getProduct(key: number): Product {
         return this.dataModel.getProduct(key);

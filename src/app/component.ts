@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import { ModelService } from "./service/model.service";
-import { ApplicationRef }   from "@angular/core";
-import { Product }  from "./model/product.model";
-import { NgForm }   from "@angular/forms";
-import { ProductFormGroup } from "./model/form.group";
+// // import { ModelService } from "./service/model.service";
+// import { ApplicationRef }   from "@angular/core";
+// import { Product }  from "./model/product.model";
+// import { NgForm }   from "@angular/forms";
+// import { ProductFormGroup } from "./model/form.group";
 
 @Component({
     selector: "app",
@@ -27,12 +27,12 @@ export class ProductComponent {
     //     return JSON.stringify(this.newProduct);
     // }
 
-    constructor(private model: ModelService) { }
+    // constructor(private model: ModelService) { }
 
-    addProduct(p: Product) {
-        // console.log("New Product: " + this.jsonProduct);
-        this.model.saveProduct(p);
-    }
+    // addProduct(p: Product) {
+    //     // console.log("New Product: " + this.jsonProduct);
+    //     this.model.saveProduct(p);
+    // }
 
     // getValidationMessages(state: any, fieldName?: string) {
     //     let field: string = state.path || fieldName;
