@@ -2,7 +2,7 @@ import { NgModule }     from "@angular/core";
 import { BrowserModule }    from "@angular/platform-browser";
 import { ProductComponent } from "./component";
 import { FormsModule, ReactiveFormsModule }     from "@angular/forms";
-import { ProductFormControl }   from "./model/form.control";
+import { ProductFormControl }   from "./model/form.model";
 import { ProductFormGroup }     from "./model/form.group";
 import { PaAttrDirective }      from "./directive/attr.directive";
 import { PaModel }              from "./directive/twoway.directive";
@@ -20,8 +20,8 @@ import { PaDiscountPipe }       from "./pipe/discount.pipe";
 import { PaDiscountDisplayComponent }   from "./component/discount/discountDisplay.component";
 import { PaDiscountEditorComponent }    from "./component/discount/discountEditor.component";
 import { DiscountService }              from "./service/discount.service";
-import { ModelService }                 from "./service/model.service";
-import { SimpleDataSourceService }      from "./service/datasource.service";
+import { ModelService }                 from "./model/repository.model";
+import { SimpleDataSourceService }      from "./model/datasource.model";
 
 @NgModule({
     imports:    [ BrowserModule, FormsModule, ReactiveFormsModule ], 

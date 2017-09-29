@@ -1,6 +1,6 @@
 import { Injectable }   from "@angular/core";
 import { Product }  from "../model/product.model";
-import { SimpleDataSourceService } from "./datasource.service";
+import { SimpleDataSourceService } from "./datasource.model";
 
 @Injectable()
 export class ModelService {

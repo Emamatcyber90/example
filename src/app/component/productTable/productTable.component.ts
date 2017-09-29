@@ -1,5 +1,5 @@
 import { Component, Input, ViewChildren, QueryList } from "@angular/core";
-import { ModelService }     from "../../service/model.service";
+import { ModelService }     from "../../model/repository.model";
 import { Product }  from "../../model/product.model";
 import { PaCellColor }  from "../../directive/cellColor.directive";
 import { DiscountService }  from "../../service/discount.service";

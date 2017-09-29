@@ -1,6 +1,6 @@
 import { FormGroup, Validators }    from "@angular/forms";
-import { ProductFormControl }   from "./form.control";
-import { LimitValidator }       from "../validator/limit.validator";
+import { ProductFormControl }   from "./form.model";
+import { LimitValidator }       from "./limit.formvalidator";
 
 export class ProductFormGroup extends FormGroup {
     constructor() {
