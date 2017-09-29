@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, ViewEncapsulation }    from "@angular/core";
 import { Product }  from "../../model/product.model";
 import { ProductFormGroup } from "../../model/form.group";
-import { ModelService }     from "../../model/repository.model";
+import { Model }    from "../../model/repository.model";
 
 @Component({
     selector:   "paProductForm", 
@@ -15,7 +15,7 @@ export class ProductFormComponent {
     // @Output("paNewProduct")
     // newProductEvent = new EventEmitter<Product>();
 
-    constructor(private model: ModelService) { }
+    constructor(private model: Model) { }
 
     submitForm(form: any) {
         this.isFormSubmitted = true;

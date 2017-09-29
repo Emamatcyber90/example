@@ -2,7 +2,7 @@ import { Injectable }   from "@angular/core";
 import { Product }      from "../model/product.model";
 
 @Injectable()
-export class SimpleDataSourceService {
+export class SimpleDataSource {
     private data:Product[];
 
     constructor() {

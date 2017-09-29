@@ -1,6 +1,6 @@
 import { Directive, HostBinding, Input, 
          SimpleChange, KeyValueDiffer, KeyValueDiffers, ChangeDetectorRef } from "@angular/core";
-import { DiscountService }      from "../service/discount.service";
+import { DiscountService }      from "../common/discount.service";
 
 @Directive({
     selector:   "td[pa-price]",
