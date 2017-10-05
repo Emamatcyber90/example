@@ -11,16 +11,19 @@ import { PaDiscountPipe }           from "./discount.pipe";
 import { PaAddTaxPipe }             from "./addTax.pipe";
 import { DiscountService }          from "./discount.service";
 import { ModelModule }              from "../model/model.module";
+import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL }  from "./log.service";
+import { VALUE_SERVICE, PaDisplayValueDirective }   from "./valueDisplay.directive";
 
 @NgModule({
     imports:    [ ModelModule ], 
     declarations: [ PaAddTaxPipe, PaCategoryFilterPipe, PaDiscountPipe, 
                     PaDiscountAmountDirective, PaIteratorDirective, PaStructureDirective, PaModel, 
-                    PaAttrDirective, PaCellColor, PaCellColorSwitcher ],
+                    PaAttrDirective, PaCellColor, PaCellColorSwitcher, PaDisplayValueDirective ],
     exports: [  PaAddTaxPipe, PaCategoryFilterPipe, PaDiscountPipe, 
                 PaDiscountAmountDirective, PaIteratorDirective, PaStructureDirective, PaModel, 
-                PaAttrDirective, PaCellColor, PaCellColorSwitcher ],
-    providers: [ DiscountService ]
+                PaAttrDirective, PaCellColor, PaCellColorSwitcher, PaDisplayValueDirective ],
+    providers: [ DiscountService, LogService, 
+                 { provide: VALUE_SERVICE, useValue: "Apples" } ]
 })
 export class CommonModule {
 
